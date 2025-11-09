@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form - No Javascript</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+            body {
+                font-family: -apple-system, sans-serif;
+                background-color: #f5f5f5;
+
+                main {
+                    max-width: 40rem; /* about 640px */
+                    margin: 2rem auto;
+                    background: white;
+                    padding: 1.5rem;
+                    border-radius: 0.625rem; /* 10px */
+                    box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.1);
+
+                    h1 {
+                        margin-bottom: 1.5rem;
+                        color: #333;
+                        font-size: 1.5rem;
+                        text-align: center;
+                    }
+
+                    form {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 1rem;
+
+                        fieldset {
+                            border: none;
+                            padding: 0;
+                            display: flex;
+                            flex-direction: column;
+                            gap: 0.5rem;
+
+                            legend {
+                                font-weight: 600;
+                                color: #333;
+                                font-size: 1rem;
+                                margin-bottom: 0.25rem;
+
+                                &.required::after {
+                                content: " *";
+                                color: red;
+                                }
+                            }
+
+                            input[type="text"],
+                            input[type="email"],
+                            textarea {
+                                padding: 0.75rem;
+                                border: 0.0625rem solid #ddd;
+                                border-radius: 0.25rem;
+                                font-size: 1rem;
+                                font-family: inherit;
+                                transition: border-color 0.3s;
+
+                                &:focus {
+                                outline: none;
+                                border-color: #2196f3;
+                                }
+                            }
+
+                            textarea {
+                                resize: vertical;
+                                min-height: 6rem;
+                            }
+                        }
+
+                        button[type="submit"] {
+                            align-self: center;
+                            padding: 0.75rem 1.5rem;
+                            background-color: #2196f3;
+                            color: white;
+                            border: none;
+                            border-radius: 0.375rem;
+                            font-size: 1rem;
+                            font-weight: 600;
+                            cursor: pointer;
+                            transition: background-color 0.3s;
+
+                            &:hover {
+                                background-color: #1976d2;
+                            }
+
+                            &:active {
+                                background-color: #0d47a1;
+                            }
+
+                            &:focus {
+                                outline: 0.1875rem solid #64b5f6;
+                                outline-offset: 0.125rem;
+                            }
+                        }
+
+                        output {
+                            padding: 0.5rem 0.75rem;
+                            border-radius: 0.25rem;
+                            font-size: 0.875rem;
+                            min-height: 1.25rem;
+
+                            &:empty {
+                                display: none;
+                            }
+
+                            &#error-output {
+                                background-color: #fff;
+                                color: red;
+                                border: 0.0625rem solid #ef5350;
+                            }
+
+                            &#info-output {
+                                background-color: #fff;
+                                color: #1565c0;
+                                border: 0.0625rem solid #42a5f5;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Contact Us</h1>
+
+        <form action="https://httpbin.org/post" method="POST">
+            <input type="hidden" name="possible_bot" value="true">
+            
+            <fieldset>
+                <legend class="required">Name</legend>
+                <input
+                    type="text"
+                    id="name"
+                    required
+                    aria-required="true"
+                >
+            </fieldset>
+
+            <fieldset>
+                <legend class="required">Email</legend>
+                <input 
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    required
+                    aria-required="true"
+                >
+            </fieldset>
+
+            <fieldset>
+                <legend class="required">Comments</legend>
+                <textarea 
+                    id="comments" 
+                    name="comments" 
+                    required
+                    aria-required="true"></textarea>
+            </fieldset>
+
+            <button type="submit">Submit</button>
+
+            <output id="error-output" aria-live="polite"></output>
+            <output id="info-output" aria-live="polite"></output>
+        </form>
+    </main>
+</body>
+</html>
