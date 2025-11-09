@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form - With Javascript</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+            body {
+                font-family: -apple-system, sans-serif;
+                background-color: #f5f5f5;
+
+                main {
+                    max-width: 40rem;
+                    margin: 2rem auto;
+                    background: white;
+                    padding: 1.5rem;
+                    border-radius: 0.625rem; 
+                    box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.1);
+
+                    h1 {
+                        margin-bottom: 1.5rem;
+                        color: #333;
+                        font-size: 1.5rem;
+                        text-align: center;
+                    }
+
+                    form {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 1rem;
+
+                        fieldset {
+                            border: none;
+                            padding: 0;
+                            display: flex;
+                            flex-direction: column;
+                            gap: 0.5rem;
+
+                            legend {
+                                font-weight: 600;
+                                color: #333;
+                                font-size: 1rem;
+                                margin-bottom: 0.25rem;
+
+                                &.required::after {
+                                    content: " *";
+                                    color: red;
+                                }
+                            }
+
+                            input[type="text"],
+                            input[type="email"],
+                            textarea {
+                                padding: 0.75rem;
+                                border: 0.0625rem solid #ddd;
+                                border-radius: 0.25rem;
+                                font-size: 1rem;
+                                font-family: inherit;
+                                transition: border-color 0.3s;
+
+                                &:focus {
+                                    outline: none;
+                                    border-color: #2196f3;
+                                }
+
+                                &:not(:placeholder-shown):invalid {
+                                    border-color: #d32f2f;
+                                    background-color: #ffebee;
+                                }
+
+                                &:not(:placeholder-shown):valid {
+                                    border-color: #4caf50;
+                                    background-color: #f1f8f4;
+                                }
+
+                                &:user-invalid {
+                                    border-color: #d32f2f;
+                                    background-color: #ffebee;
+                                }
+
+                                &:user-valid {
+                                    border-color: #4caf50;
+                                }
+
+                                &:required {
+                                    border-left: 4px solid #ff9800;
+                                }
+
+                                &:optional {
+                                    border-left: 4px solid #9e9e9e;
+                                }
+                            }
+
+                            textarea {
+                                resize: vertical;
+                                min-height: 6rem;
+                            }
+                        }
+
+                        button[type="submit"] {
+                            align-self: center;
+                            padding: 0.75rem 1.5rem;
+                            background-color: #2196f3;
+                            color: white;
+                            border: none;
+                            border-radius: 0.375rem;
+                            font-size: 1rem;
+                            font-weight: 600;
+                            cursor: pointer;
+                            transition: background-color 0.3s;
+
+                            &:hover {
+                                background-color: #1976d2;
+                            }
+
+                            &:active {
+                                background-color: #0d47a1;
+                            }
+
+                            &:focus {
+                                outline: 0.1875rem solid #64b5f6;
+                                outline-offset: 0.125rem;
+                            }
+                        }
+
+                        output {
+                            padding: 0.5rem 0.75rem;
+                            border-radius: 0.25rem;
+                            font-size: 0.875rem;
+                            min-height: 1.25rem;
+
+                            &:empty {
+                                display: none;
+                            }
+
+                            &#error-output {
+                                background-color: #fff;
+                                color: red;
+                                border: 0.0625rem solid #ef5350;
+                            }
+
+                            &#info-output {
+                                background-color: #fff;
+                                color: #1565c0;
+                                border: 0.0625rem solid #42a5f5;
+                            }
+                        }
+                    }
+                }
+            }
+
+            @media (prefers-contrast: high) {
+                input, textarea {
+                    border-width: 0.0625rem;
+                }
+            }
+
+            char-counter {
+                font-size: 0.875rem;
+                text-align: right;
+                color: #666;
+                display: block;
+                margin-top: 0.25rem;
+            }
+
+            char-counter.warning {
+                color: #ff9800;
+                font-weight: 600;
+            }
+            
+            char-counter.error {
+                color: red;
+                font-weight: 700;
+            }
+
+            @keyframes flash-red {
+                0%, 100% {background-color: transparent;}
+                50% {background-color: #ffcdd2;}
+            }
+
+            .flash-error {
+                animation: flash-red 0.5s;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Contact Us</h1>
+
+        <form action="https://httpbin.org/post" method="POST" novalidate>
+            <input type="hidden" name="possible_bot" value="true">
+            <input type="hidden" name="form-errors" id="form-errors-field" value="[]">
+            
+            <fieldset>
+                <legend class="required">Name</legend>
+                <input
+                    type="text" 
+                    id="name" 
+                    name="name" 
+                    required 
+                    minlength="2"
+                    maxlength="100"
+                    pattern="[A-Za-z\s\-']+"
+                    placeholder=" "
+                    title="Please enter a valid name (letters, spaces, hyphens, and apostrophes only)"
+                    aria-required="true"
+                >
+            </fieldset>
+
+            <fieldset>
+                <legend class="required">Email</legend>
+                <input 
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    required
+                    placeholder=" "
+                    title="Please enter a valid email address"
+                    aria-required="true"
+                >
+            </fieldset>
+
+            <fieldset>
+                <legend class="required">Comments</legend>
+                <textarea 
+                    id="comments" 
+                    name="comments" 
+                    required
+                    minlength="10"
+                    maxlength="500"
+                    placeholder=" "
+                    title="Please enter at least 10 characters"
+                    aria-required="true">
+                </textarea>
+                <char-counter id="char-counter">500 characters remaining</char-counter>
+            </fieldset>
+
+            <button type="submit">Submit</button>
+
+            <output id="error-output" aria-live="polite"></output>
+            <output id="info-output" aria-live="polite"></output>
+        </form>
+    </main>
+
+    <script>
+        const form = document.querySelector('form');
+        const errorOutput = document.getElementById('error-output');
+        const infoOutput = document.getElementById('info-output');
+        const formErrorsField = document.getElementById('form-errors-field');
+        const nameField = document.getElementById('name');
+        const comments = document.getElementById('comments');
+        const charCounter = document.getElementById('char-counter');
+
+        const form_errors = [];
+
+        function showMessage(output, message) {
+            output.textContent = message;
+            output.style.display = 'block';
+            setTimeout(() => output.style.display = 'none', 3000);
+        }
+
+        function flashField(field) {
+            field.classList.add('flash-error');
+            setTimeout(() => field.classList.remove('flash-error'), 500);
+        }
+
+        nameField.addEventListener('input', e => {
+            const pattern = /^[A-Za-z\s\-']*$/;
+            if (!pattern.test(e.target.value)) {
+                flashField(nameField);
+                showMessage(errorOutput, 'Illegal character entered in Name.');
+                nameField.value = e.target.value.replace(/[^A-Za-z\s\-']/g, '');
+            }
+        });
+
+        comments.addEventListener('input', () => {
+            const max = comments.maxLength;
+            const remaining = max - comments.value.length;
+            charCounter.textContent = `${remaining} characters remaining`;
+            charCounter.classList.remove('warning', 'error');
+
+            if (remaining <= 50 && remaining > 0) charCounter.classList.add('warning');
+            else if (remaining <= 0) {
+                charCounter.classList.add('error');
+                comments.setCustomValidity('Character limit exceeded');
+            } else {
+                comments.setCustomValidity('');
+            }
+
+            if (comments.checkValidity() && comments.value.length >= 10) {
+                showMessage(infoOutput, 'Comments field is valid!');
+            }
+        });
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            form_errors.length = 0;
+            const inputs = form.querySelectorAll('input, textarea');
+            let hasErrors = false;
+
+            inputs.forEach(input => {
+                if (!input.checkValidity()) {
+                    form_errors.push({
+                        field: input.name,
+                        value: input.value,
+                        error: input.validationMessage
+                    });
+                    flashField(input);
+                    hasErrors = true;
+                }
+            });
+
+            formErrorsField.value = JSON.stringify(form_errors, null, 2);
+
+            if (hasErrors) {
+                showMessage(errorOutput, 'Form contains errors. Please fix them before submitting.');
+            } else {
+                showMessage(infoOutput, 'Form submitted successfully!');
+                form.submit();
+            }
+        });
+    </script>
+</body>
+</html>
