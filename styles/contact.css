@@ -145,7 +145,7 @@ main {
 
             @keyframes flash-red {
                 0%, 100% { background-color: transparent; }
-                50% { background-color: --accent; }
+                50% { background-color: var(--background); }
             }
         }
     }
