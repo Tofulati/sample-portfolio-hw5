@@ -14,33 +14,36 @@ main {
     background-color: var(--background);
     color: var(--text);
 
-    & .resume-container {
+    .resume-container {
         display: flex;
         flex-direction: column;
-        border: var(--card-border, 1px solid var(--text));
-        padding: 1rem 2rem;
-        background-color: var(--background);
-        color: var(--text);
+        align-items: center;
+        width: 100%;
+        max-width: 900px;
 
-        section {
-            padding: 0.5rem;
+        .resume-pdf {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 8.5 / 11;
+            object-fit: contain;
 
-            h2 {
-                color: var(--primary);
-            }
-
-            & article {
-                padding: 0 1rem;
-
-                & h3 {
-                    color: var(--accent)
-                }
-            }
+            border: var(--card-border);
+            border-radius: 8px;
+            background-color: var(--background);
         }
 
-        a {
-            text-decoration: none;
-            color: var(--text);
+        .download-btn {
+            margin-top: 1rem;
+            padding: 0.6rem 1.1rem;
+            background: var(--primary);
+            border-radius: var(--button-radius);
+            border: none;
+            cursor: pointer;
+
+            a {
+                color: var(--text);
+                text-decoration: none;
+            }
         }
     }
 }
