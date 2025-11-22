@@ -27,36 +27,10 @@
     </header>
 
     <main class="research-main">
-        <section class="research-container">
-            <research-card 
-                data-title="Computational Methods for GEPs and RNA-seq Modification Analysis"
-                data-date="Oct 2024 – Present | UCSD Health — Hojun Li Lab"
-                data-tags="Python,Pandas,NumPy,R,Seurat,scRNA-seq,Nanopore">
-                <ul slot="description">
-                    <li>Engineered a scalable Python-based bioinformatics pipeline for parsing BAM alignment files from Oxford Nanopore's Dorado platform, enabling efficient detection and quantification of A-to-I RNA editing events.</li>
-                    <li>Developed a computationally optimized algorithm to calculate per-base modification frequencies, leveraging ONT's statistical models and vectorized Pandas/NumPy operations to minimize runtime and memory overhead.</li>
-                    <li>Implemented automated genomic feature annotation using interval tree data structures, producing reproducible, research-ready datasets that support downstream analyses.</li>
-                    <li>Applied advanced dimensionality reduction (UMAP) and differential gene expression analysis on single-cell transcriptomic datasets, uncovering novel regulatory programs in hematopoietic stem and progenitor cells.</li>
-                    <li>Evaluated and benchmarked scRNA-seq algorithms, demonstrating reconstruction performance comparable to consensus NMF approaches for identifying gene expression modules.</li>
-                    <li>Engineered a reproducible, scalable workflow for more than 57,000 single-cell profiles using R, Seurat, and Python/Pandas, improving pipeline maintainability and computational efficiency.</li>
-                </ul>
-            </research-card>
+        <section class="research-container" id="research-container""></section>
 
-            <research-card 
-                data-title="Data Science Challenge: Heart Arrhythmia Classification and Detection"
-                data-date="Jul 2024 – Aug 2024 | Lawrence Livermore National Laboratory"
-                data-image="/assets/images/Final Poster.jpg"
-                data-alt="Heart Arrhythmia Classification Poster"
-                data-link="https://colab.research.google.com/drive/1HpvVqRceEHPMWGJSOUL2GTt6dM-T8eWe?usp=sharing"
-                data-link-text="Data Science Challenge Repo"
-                data-tags="Python,Pandas,Machine Learning,Deep Learning,CNN">
-                <ul slot="description">
-                    <li>Developed a production-ready machine learning pipeline for ventricular arrhythmia classification, benchmarking Logistic Regression, Random Forest, and deep learning models.</li>
-                    <li>Achieved 99% recall by designing and hyperparameter-tuning a sequence-to-sequence convolutional neural network, significantly improving diagnostic sensitivity.</li>
-                    <li>Processed and labeled large datasets (over 16,000 samples) using Pandas dataframes for training and testing.</li>
-                </ul>
-            </research-card>
-        </section>
+        <button id="load-local">Load Local</button>
+        <button id="load-remote">Load Remote</button>
 
         <span id="notice">
             <strong>Note:</strong><i> Page is still under construction.</i>
