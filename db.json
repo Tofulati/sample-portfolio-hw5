@@ -1,0 +1,115 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "Stock-em: Sentimental, LSTM Stock Model and Application",
+      "date": "October 2025 - Present",
+      "image": "/assets/images/stock-em-2.png",
+      "alt": "Stock-em Prediction Viewer",
+      "link": "https://github.com/Tofulati/stock-em",
+      "linkText": "Stock-em Repo",
+      "tags": ["Python", "Pandas", "NumPy", "Sklearn", "yfinance", "PyTorch", "MatPlotLib", "Flask", "HuggingFace"],
+      "description": [
+        "Ingest historic price and fundamentals from yfinance as well as news from a news api.",
+        "Build features and sequences from a LSTM model focusing on stock characteristics.",
+        "Compile scores from RNN predictions, news scores, and fundamentals to a final score, which are compared through a backtest",
+        "Results are displayed, starting from prediction start date to calculate generated revenue."
+      ],
+      "notes": [
+        "Working to improve futures predictions as well expand to multiple stock portfolio predictions."
+      ]
+    },
+    {
+      "id": 2,
+      "title": "WebDevScav: Web Development Tool Search Game",
+      "date": "October 2025 - Present",
+      "link": "https://github.com/Tofulati/webdevscav",
+      "linkText": "WebDevScan Repo",
+      "tags": ["HTML", "CSS", "JavaScript", "MongoDB", "Vercel", "Web Dev", "Game dev"],
+      "description": [
+        "Single and Multiplayer game aimed to hone web development tool skills through a webpage scavenger hunt. Search through inspect elements, network packages, hidden values, console, scripts for keys.",
+        "Pull simulated pages from a MongoDB Atlas database and swap through each one for each run.",
+        "Webpages developed with pure HTML, CSS, and JavaScript to maintain readability and replicate modern pages."
+      ],
+      "notes": [
+        "Working to improve multiplayer experience as well as generate more unique pages.",
+        "Working to also improve GUI to improve player experience."
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Residual Network Stock Predictor",
+      "date": "January 2025",
+      "image": "/assets/images/stock.jpg",
+      "alt": "Residual Network Stock Predictor Screenshot",
+      "tags": ["Python", "Pandas", "NumPy", "Sklearn", "yfinance"],
+      "description": [
+        "Designed and implemented a residual neural network from scratch to predict real-time S&P 500 readings, achieving results within 5% of state-of-the-art baselines in stock price forecasting.",
+        "Utilized the yfinance API to retrieve real-time data and processed financial data using Pandas and NumPy."
+      ]
+    },
+    {
+      "id": 4,
+      "title": "MewsiCat: Music meets Cats Social Media Mobile App",
+      "date": "November 2023 - May 2024",
+      "image": "/assets/images/mewsicat.jpg",
+      "alt": "MewsiCat Screenshot",
+      "link": "https://github.com/MewsiCat/react-native-app",
+      "linkText": "MewsiCat Repo",
+      "tags": ["Python", "JavaScript", "React Native", "AWS", "Expo"],
+      "description": [
+        "Implemented a mobile social networking application incorporating the Spotify API and interactive sprites/modules.",
+        "Guided a team of four to create and design the mobile application's user interface and experience (UX/UI).",
+        "Developed full-stack integration for data processing and retrieval through AWS, JavaScript, and Python scripts."
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Earth Equity: Dataset Number Trend Prediction Web App",
+      "date": "October 2023",
+      "image": "/assets/images/nasa_space.jpg",
+      "alt": "EarthEquity Screenshot",
+      "link": "https://github.com/hajin-park/Earth-Equity",
+      "linkText": "Earth Equity Repo",
+      "tags": ["React", "JavaScript", "HTML", "Tailwind CSS", "D3.js"],
+      "description": [
+        "Led a team of 5 to develop a full-stack web application for NASA Space Apps Hackathon; leveraging NASA time-series datasets through stock market trend indicators for data visualization.",
+        "Integrated interactive database displays and modules utilizing React framework, Tailwind CSS, and D3.js.",
+        "Incorporated data from Python data-scraping algorithms using JavaScript scripts.",
+        "Presented the finalized web application and explained implementation to a panel of professionals."
+      ]
+    }
+  ],
+
+  "research": [
+    {
+      "id": 1,
+      "title": "Computational Methods for GEPs and RNA-seq Modification Analysis",
+      "date": "Oct 2024 – Present | UCSD Health — Hojun Li Lab",
+      "tags": ["Python", "Pandas", "NumPy", "R", "Seurat", "scRNA-seq", "Nanopore"],
+      "description": [
+        "Engineered a scalable Python-based bioinformatics pipeline for parsing BAM alignment files from Oxford Nanopore's Dorado platform, enabling efficient detection and quantification of A-to-I RNA editing events.",
+        "Developed a computationally optimized algorithm to calculate per-base modification frequencies, leveraging ONT's statistical models and vectorized Pandas/NumPy operations to minimize runtime and memory overhead.",
+        "Implemented automated genomic feature annotation using interval tree data structures, producing reproducible, research-ready datasets that support downstream analyses.",
+        "Applied advanced dimensionality reduction (UMAP) and differential gene expression analysis on single-cell transcriptomic datasets, uncovering novel regulatory programs in hematopoietic stem and progenitor cells.",
+        "Evaluated and benchmarked scRNA-seq algorithms, demonstrating reconstruction performance comparable to consensus NMF approaches for identifying gene expression modules.",
+        "Engineered a reproducible, scalable workflow for more than 57,000 single-cell profiles using R, Seurat, and Python/Pandas, improving pipeline maintainability and computational efficiency."
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Data Science Challenge: Heart Arrhythmia Classification and Detection",
+      "date": "Jul 2024 – Aug 2024 | Lawrence Livermore National Laboratory",
+      "image": "/assets/images/Final Poster.jpg",
+      "alt": "Heart Arrhythmia Classification Poster",
+      "link": "https://colab.research.google.com/drive/1HpvVqRceEHPMWGJSOUL2GTt6dM-T8eWe?usp=sharing",
+      "linkText": "Data Science Challenge Repo",
+      "tags": ["Python", "Pandas", "Machine Learning", "Deep Learning", "CNN"],
+      "description": [
+        "Developed a production-ready machine learning pipeline for ventricular arrhythmia classification, benchmarking Logistic Regression, Random Forest, and deep learning models.",
+        "Achieved 99% recall by designing and hyperparameter-tuning a sequence-to-sequence convolutional neural network, significantly improving diagnostic sensitivity.",
+        "Processed and labeled large datasets (over 16,000 samples) using Pandas dataframes for training and testing."
+      ]
+    }
+  ]
+}
