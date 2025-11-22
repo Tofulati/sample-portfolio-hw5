@@ -27,86 +27,10 @@
         </header>
 
         <main class="projects-main">
-            <section class="projects-section">
-                <project-card 
-                    data-title="Stock-em: Sentimental, LSTM Stock Model and Application"
-                    data-date="October 2025 - Present"
-                    data-image="/assets/images/stock-em-2.png"
-                    data-alt="Stock-em Prediction Viewer"
-                    data-link="https://github.com/Tofulati/stock-em"
-                    data-link-text="Stock-em Repo"
-                    data-tags="Python,Pandas,NumPy,Sklearn,yfinance,PyTorch,MatPlotLib,Flask,HuggingFace">
-                    <ul slot="description">
-                        <li>Ingest historic price and fundamentals from yfinance as well as news from a news api.</li>
-                        <li>Build features and sequences from a LSTM model focusing on stock characteristics.</li>
-                        <li>Compile scores from RNN predictions, news scores, and fundamentals to a final score, which are compared through a backtest</li>
-                        <li>Results are displayed, starting from prediction start date to calculate generated revenue.</li>
-                    </ul>
-                    <ul slot="notes" style="list-style: circle;">
-                        <li><em>Working to improve futures predictions as well expand to multiple stock portfolio predictions.</em></li>
-                    </ul>
-                </project-card>
+            <section class="projects-section" id="projects-container"></section>
 
-                <project-card 
-                    data-title="WebDevScav: Web Development Tool Search Game"
-                    data-date="October 2025 - Present"
-                    data-link="https://github.com/Tofulati/webdevscav"
-                    data-link-text="WebDevScan Repo"
-                    data-tags="HTML,CSS,JavaScript,MongoDB,Vercel,Web Dev,Game dev">
-                    <ul slot="description">
-                        <li>Single and Multiplayer game aimed to hone web development tool skills through a webpage scavenger hunt. Search through inspect elements, network packages, hidden values, console, scripts for keys.</li>
-                        <li>Pull "simulated" pages from a MongoDB Atlas database and swap through each one for each run.</li>
-                        <li>Webpages developed with pure HTML, CSS, and JavaScript to maintain readability and replicate modern pages.</li>
-                    </ul>
-                    <ul slot="notes" style="list-style: circle;">
-                        <li><em>Working to improve multiplayer experience as well as generate more unique pages.</em></li>
-                        <li><em>Working to also improve GUI to improve player experience.</em></li>
-                    </ul>
-                </project-card>
-
-                <project-card 
-                    data-title="Residual Network Stock Predictor"
-                    data-date="January 2025"
-                    data-image="/assets/images/stock.jpg"
-                    data-alt="Residual Network Stock Predictor Screenshot"
-                    data-tags="Python,Pandas,NumPy,Sklearn,yfinance">
-                    <ul slot="description">
-                        <li>Designed and implemented a residual neural network from scratch to predict real-time S&P 500 readings, achieving results within 5% of state-of-the-art baselines in stock price forecasting.</li>
-                        <li>Utilized the yfinance API to retrieve real-time data and processed financial data using Pandas and NumPy.</li>
-                    </ul>
-                </project-card>
-
-                <project-card 
-                    data-title="MewsiCat: Music meets Cats Social Media Mobile App"
-                    data-date="November 2023 - May 2024"
-                    data-image="/assets/images/mewsicat.jpg"
-                    data-alt="MewsiCat Screenshot"
-                    data-link="https://github.com/MewsiCat/react-native-app"
-                    data-link-text="MewsiCat Repo"
-                    data-tags="Python,JavaScript,React Native,AWS,Expo">
-                    <ul slot="description">
-                        <li>Implemented a mobile social networking application incorporating the Spotify API and interactive sprites/modules.</li>
-                        <li>Guided a team of four to create and design the mobile application's user interface and experience (UX/UI).</li>
-                        <li>Developed full-stack integration for data processing and retrieval through AWS, JavaScript, and Python scripts.</li>
-                    </ul>
-                </project-card>
-
-                <project-card 
-                    data-title="Earth Equity: Dataset Number Trend Prediction Web App"
-                    data-date="October 2023"
-                    data-image="/assets/images/nasa_space.jpg"
-                    data-alt="EarthEquity Screenshot"
-                    data-link="https://github.com/hajin-park/Earth-Equity"
-                    data-link-text="Earth Equity Repo"
-                    data-tags="React,JavaScript,HTML,Tailwind CSS,D3.js">
-                    <ul slot="description">
-                        <li>Led a team of 5 to develop a full-stack web application for NASA Space Apps Hackathon; leveraging NASA time-series datasets through stock market trend indicators for data visualization.</li>
-                        <li>Integrated interactive database displays and modules utilizing React framework, Tailwind CSS, and D3.js.</li>
-                        <li>Incorporated data from Python data-scraping algorithms using JavaScript scripts.</li>
-                        <li>Presented the finalized web application and explained implementation to a panel of professionals.</li>
-                    </ul>
-                </project-card>
-            </section>
+            <button id="load-local">Load Local</button>
+            <button id="load-remote">Load Remote</button>
 
             <span id="notice">
                 <strong>Note:</strong><i> Page is still under construction.</i>
