@@ -1,18 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('a').forEach(link => {
-    if (!link.href.startsWith(location.origin)) return; 
+    if (!link.href.startsWith(location.origin)) return;
 
     link.addEventListener('click', (e) => {
       e.preventDefault();
-
-      const currentPage = document.body; 
       const targetUrl = link.href;
 
-      currentPage.style.animation = 'swipeLeftOut 0.5s ease forwards';
+      const overlay = document.createElement('div');
+      overlay.className = 'page-transition-overlay';
+      document.body.appendChild(overlay);
 
-      setTimeout(() => {
+      overlay.style.animation = 'overlaySlideIn 0.8s ease forwards';
+
+      overlay.addEventListener('animationend', () => {
         window.location.href = targetUrl;
-      }, 500);
+      });
     });
   });
 });
