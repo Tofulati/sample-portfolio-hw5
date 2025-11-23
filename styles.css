@@ -1,27 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&family=Bungee+Spice&display=swap');
 
 :root {
-    --text: #eaf0f1;
-    --background: #1a2227;
-    --primary: #578594;
-    --secondary: #365863;
-    --accent: #3e6c7a;
+  --text: #0c0d0e;
+  --background: #f9fafb;
+  --primary: #6085a9;
+  --secondary: #a2bcd8;
+  --accent: #73a2d3;
 }
 
-[data-theme="light"] {
-    --text: #0e1415;
-    --background: #e0f1f9;
-    --primary: #6b9aa9;
-    --secondary: #9dbfc9;
-    --accent: #84b3c1;
+:root[data-theme="light"] {
+  --text: #0c0d0e;
+  --background: #f9fafb;
+  --primary: #6085a9;
+  --secondary: #a2bcd8;
+  --accent: #73a2d3;
 }
-
-[data-theme="dark"] {
-    --text: #eaf0f1;
-    --background: #1a2227;
-    --primary: #578594;
-    --secondary: #365863;
-    --accent: #3e6c7a;
+:root[data-theme="dark"] {
+  --text: #f1f2f3;
+  --background: #040506;
+  --primary: #567a9f;
+  --secondary: #27415d;
+  --accent: #2c5a8c;
 }
 
 @keyframes showLine {
@@ -199,7 +198,7 @@ html, body {
         animation: swipeLeftIn 0.5s ease forwards;
 
         & header {
-            background: color-mix(in oklch, var(--primary), black 20%);
+            background: linear-gradient(to bottom, var(--primary) 0%, var(--background) 100%);
             color: var(--background);
             padding: 1rem 2rem;
             text-align: center;
@@ -385,7 +384,7 @@ html, body {
         }
 
         & footer {
-            background: color-mix(in oklch, var(--primary), black 25%);
+            background: linear-gradient(to top, var(--primary) 0%, var(--background) 100%);
             color: var(--text);
             text-align: center;
             padding: 1rem;
