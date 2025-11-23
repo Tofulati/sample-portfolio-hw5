@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Albert Ho's Portfolio - CRUD</title>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/styles/research.css">
+  <link rel="stylesheet" href="/hw5/crud.css">
+  <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+</head>
+<body>
+  <header>
+    <nav>
+      <h1><a href="/">Albert Ho</a></h1>
+      <ul id="nav-links">
+        <li><a href="/pages/about.html">About</a></li>
+        <li><a href="/pages/research.html">Research</a></li>
+        <li><a href="/pages/projects.html">Projects</a></li>
+        <li><a href="/pages/resume.html">Resume</a></li>
+        <li><a href="/pages/contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="crud-main">
+    <h2>CRUD Operations</h2>
+
+    <form id="crud-form">
+      <fieldset>
+        <legend>Create / Update Entry</legend>
+
+        <label>
+          Data Type:
+          <select name="type" required>
+            <option value="research">Research</option>
+            <option value="projects">Projects</option>
+          </select>
+        </label>
+
+        <label>
+          Select ID (for update/delete):
+          <select name="id" id="id-select">
+            <option value="">--Select ID--</option>
+          </select>
+        </label>
+
+        <label>
+          Title:
+          <input type="text" name="title" required placeholder="Example: My Research Paper / Project">
+        </label>
+
+        <label>
+          Date:
+          <input type="text" name="date" placeholder="2025-11-22">
+        </label>
+
+        <label>
+          Image URL:
+          <input type="text" name="image" placeholder="/assets/example.png">
+        </label>
+
+        <label>
+          Alt text:
+          <input type="text" name="alt" placeholder="Example image description">
+        </label>
+
+        <label>
+          Link:
+          <input type="text" name="link" placeholder="https://example.com">
+        </label>
+
+        <label>
+          Link Text:
+          <input type="text" name="linkText" placeholder="Learn More">
+        </label>
+
+        <label>
+          Tags (comma separated):
+          <input type="text" name="tags" placeholder="AI, Bioinformatics">
+        </label>
+
+        <label>
+          Description (semicolon separated):
+          <input type="text" name="description" placeholder="Point 1; Point 2">
+        </label>
+
+        <label>
+          Notes (semicolon separated):
+          <input type="text" name="notes" placeholder="Note 1; Note 2">
+        </label>
+
+        <section class="button-select">
+          <button type="submit" name="action" value="create">Create</button>
+          <button type="submit" name="action" value="update">Update</button>
+          <button type="submit" name="action" value="delete">Delete</button>
+        </section>
+      </fieldset>
+    </form>
+
+    <section class="crud-container" id="crud-container"></section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Albert Ho. All rights reserved.</p>
+  </footer>
+
+  <script src="/hw5/crud.js"></script>
+</body>
+</html>
