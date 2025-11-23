@@ -17,7 +17,6 @@ main {
     article {
         display: flex;
         flex-direction: row;
-        gap: 3rem;
 
         & > section {
             flex: 1;
@@ -33,7 +32,7 @@ main {
 
         img {
             flex: 1 1 20%;   
-            max-width: 22%;   
+            max-width: 25%;   
             aspect-ratio: 1/1;
             object-fit: cover;
             border-radius: 8px;
@@ -41,10 +40,34 @@ main {
         }
 
         video {
-            flex: 1 1 40%;   
-            max-width: 45%;
-            aspect-ratio: 16/9; 
+            flex: 1 1 30%;   
+            max-width: 40%;
+            aspect-ratio: 1/1; 
             border-radius: 8px;
+        }
+    }
+
+    .about-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.25rem; 
+        justify-content: flex-start;
+        margin: 0.5rem 0 1rem 0; 
+    }
+
+    .about-tags .tag {
+        background-color: var(--accent);
+        color: var(--background);
+        font-size: clamp(0.7rem, 1vw, 0.85rem);
+        padding: 0.2rem 0.4rem; 
+        border-radius: 0.5rem;
+        white-space: nowrap;
+    }
+
+    @media (max-width: 700px) {
+        .about-tags .tag {
+            font-size: 0.7rem; 
+            padding: 0.15rem 0.3rem;
         }
     }
 
@@ -68,8 +91,8 @@ main {
 
     @media (max-width: 700px) {
         article {
+            display: flex;
             flex-direction: column;
-            gap: 2rem;
             align-items: center;
         }        
 
@@ -79,13 +102,13 @@ main {
         }
 
         #hobbies-gallery img {
-            flex: 1 1 45%; 
-            max-width: 48%;
+            flex: 1 1 35%; 
+            max-width: 30%;
         }
 
         #hobbies-gallery video {
             flex: 1 1 100%;
-            max-width: 100%;
+            max-width: 40%;
         }
     }
 }
