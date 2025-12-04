@@ -1,3 +1,17 @@
+:root {
+  --card-bg: var(--secondary);
+  --card-border-width: 2px;
+  --card-border-color: var(--accent);
+  --card-border-radius: 1rem;
+  --card-padding: 2rem 1.5rem;
+  --card-gap: 1rem;
+  --card-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  --card-shadow-hover: 0 8px 20px rgba(0, 0, 0, 0.2);
+  --card-border-hover: var(--primary);
+  --card-transform-hover: translateY(-5px);
+  --card-transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
 .research-main {
   flex: 1;
   display: flex;
@@ -20,22 +34,22 @@
     research-card {
       width: 100%;
       max-width: 700px;
-      background-color: var(--secondary);
-      border: 2px solid var(--accent);
-      border-radius: 1rem;
-      padding: 2rem 1.5rem;
+      background-color: var(--card-bg);
+      border: var(--card-border-width) solid var(--card-border-color);
+      border-radius: var(--card-border-radius);
+      padding: var(--card-padding);
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 1rem;
+      gap: var(--card-gap);
       box-sizing: border-box;
-      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: var(--card-transition);
+      box-shadow: var(--card-shadow);
 
       &:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-        border-color: var(--primary);
+        transform: var(--card-transform-hover);
+        box-shadow: var(--card-shadow-hover);
+        border-color: var(--card-border-hover);
       }
 
       .entry-header {
